@@ -1,7 +1,21 @@
 function afficher() {
-    let valeur = document.forms[0]["patates"].value;
-    document.getElementById("valeur").innerText = valeur;
+    // let valeur = document.forms[0]["patates"].value;
+    // document.getElementById("valeur").innerText = valeur;
+
+   // $("#valeur").text($("#patates").val());
 }
+$(document).ready(function(){
+    $("#patates").change(function(){
+    $("#valeur").text($("#patates").val());
+    })
+
+    $('#mpd1').blur(function(){
+        if ($('mpd1').val().length < 8){
+            $('erreur_mdp').html("Le mot de passe doit contenir au moins <strong>8 caractères</strong>");
+            $('erreur_mdp').removeClass("invisible");
+        }
+    })
+});
 
 function valider() {
     let mdp1 = document.forms[0]["mdp1"].value;
