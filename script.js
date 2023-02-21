@@ -35,7 +35,7 @@ function valider() {
         }
         //alert("Les 2 mots de passe doivent être identiques et contenir au moins 8 caractères")
         //Remplacer le pop-up par un message sur la page:
-        document.getElementById("erreur_mdp").setAttribute("class", "");
+        document.getElementById("erreur_mdp").setAttribute("class", "col-8");
         return false; //Empêcher l'envoie du formulaire
     }
 }

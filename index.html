@@ -6,55 +6,56 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="container">
 <h1>Formulaire d'inscription</h1>
 <form method="post" action="connecte.html">
-  <label>Nom <input name="nom" type="text" required/></label><br/>
-  <label>Prénom <input name="prenom" type="text" required/></label><br/>
-  <label>Courriel <input name="courriel" type="email" required placeholder="user@domaine.com"
+  <label class="row"><div class="col-md-2 ">Nom </div> <input class="col-8" name="nom" type="text" required/></label><br/>
+  <label class="row"><div class="col-md-2">Prénom </div><input class="col-8" name="prenom" type="text" required/></label><br/>
+  <label class="row"><div class="col-md-2">Courriel</div> <input class="col-8" name="courriel" type="email" required placeholder="user@domaine.com"
                          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" /></label><br/>
-  <label>Téléphone <input name="tel" type="tel" required placeholder="819-555-5555"
+  <label class="row"><div class="col-md-2">Téléphone</div> <input class="col-8" name="tel" type="tel" required placeholder="819-555-5555"
                           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" /></label><br/>
 
-  <label>Sexe <input type="radio" name="sexe" value="F">Femme</input>
-    <input type="radio" name="sexe" value="H" >Homme</input>
-    <input type="radio" name="sexe" value="A" >Autre</input>   </label><br/>
+  <label class="row"><div class="col-md-2">Sexe </div><input class="col-md-2 " type="radio" name="sexe" value="F">Femme</input>
+    <input class="col-md-2" type="radio" name="sexe" value="H" >Homme</input>
+    <input class="col-md-2" type="radio" name="sexe" value="A" >Autre</input>   </label><br/>
 
-  <label>Pays <select name="pays">
+  <label class="row"><div class="col-md-2">Pays</div> <select  class="col-8" name="pays">
     <option></option>
     <option value="Canada">Canada</option>
     <option value="France">France</option>
   </select></label><br/>
 
   <!-- Ajout d'une liste déroulante avec l'option d'écrire notre propre texte --->
-  <label>Province <input required list="provinces">
+  <label class="row py-3"><div class="col-md-2">Province</div> <input class="col-8" required list="provinces">
     <datalist id="provinces">
       <option value="QC"><legende>Une province francophone</legende> <!-- legende ajoute une description à l'option -->
       <option value="ON">
     </datalist>
   </label>
 
-  <label>Commentaires<br/>
-    <textarea name="commentaire"></textarea>
-  </label><br/>
-
-  Patates
-  <input id="patates" type="range" name="patates" onchange="afficher()"><span id="valeur">50</span>
+  <label class="row"><div class="col-md-2">Commentaires</div><br/>
+    <textarea  class="col-8" name="commentaire"></textarea>
+  </label>
 
   <br/>
-  <label><input type="checkbox" name="condtion" required>J'accepte les conditions</label><br/>
-  <label><input type="checkbox" name="publicite">Je veux recevoir de la publicité</label><br/>
+  <label class="row checkbox py-2"><input class="checkbox col-md-2 " type="checkbox" name="condtion" required>J'accepte les conditions</label><br/>
+  <label class="row checkbox py-2"><input class="checkbox col-md-2 " type="checkbox" name="publicite">Je veux recevoir de la publicité</label><br/>
 
-  <label>Mot de passe <input id="mdp1" name="mdp1" type="password" required/></label><br/>
-  <label>Mot de passe <input d="mdp2" name="mdp2" type="password" onblur="valider()" required /></label>
+  <label class="row py-2"><div class="col-3">Mot de passe</div> <input class="col-7" id="mdp1" name="mdp1" type="password" required/></label><br/>
+  <label class="row py-2"><div class="col-3">Mot de passe</div> <input class="col-7" d="mdp2" name="mdp2" type="password" onblur="valider()" required /></label>
   <!-- Ajouter un message d'erreur qui va apparaître et disparaître avec javascript et css -->
-  <p id="erreur_mdp" class="invisible">Les 2 mots de passe doivent être identiques et contenir au moins 8 caractères</p><br/>
+
+  <p id="erreur_mdp" class="invisible col-8">Les 2 mots de passe doivent être identiques et contenir au moins 8 caractères</p><br/>
   <!-- submit exécute l'action du form sauf si la fonction dans onclick retourne false -->
-  <input type="submit" value="Connexion" onclick="return valider()" required/>
-  <input type="reset" value="Effacer">
-  <input type="button" value="Popup" onclick="alert('allo')">
+  <div class="row justify-content-around py-2">
+  <input class="col-md-2" type="submit" value="Connexion" onclick="return valider()" required/>
+  <input class="col-md-2" type="reset" value="Effacer">
+  <input class="col-md-2" type="button" value="Popup" onclick="alert('allo')"></div>
 </form>
 </body>
 </html>
